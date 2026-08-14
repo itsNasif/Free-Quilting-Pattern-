@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Log cabin quilt block study in midnight, forest and gold on linen">
+  <rect width="640" height="640" fill="#eee2ca"/>
+  <g transform="translate(320 320) rotate(0)">
+    <!-- four log-cabin blocks turned on point -->
+    <g transform="rotate(45)">
+      <rect x="-150" y="-150" width="300" height="300" fill="#263a56"/>
+      <rect x="-120" y="-120" width="240" height="240" fill="#1a2030"/>
+      <rect x="-90" y="-90" width="180" height="180" fill="#c3932b"/>
+      <rect x="-60" y="-60" width="120" height="120" fill="#2a4234"/>
+      <rect x="-30" y="-30" width="60" height="60" fill="#eee2ca"/>
+      <rect x="-15" y="-15" width="30" height="30" fill="#c3932b"/>
+    </g>
+    <!-- corner blocks -->
+    <g fill="#1a2030">
+      <rect x="110" y="110" width="120" height="120" transform="rotate(45 170 170)"/>
+      <rect x="-230" y="110" width="120" height="120" transform="rotate(45 -170 170)"/>
+      <rect x="110" y="-230" width="120" height="120" transform="rotate(45 170 -170)"/>
+      <rect x="-230" y="-230" width="120" height="120" transform="rotate(45 -170 -170)"/>
+    </g>
+    <g fill="#5c2331">
+      <rect x="150" y="150" width="40" height="40" transform="rotate(45 170 170)"/>
+      <rect x="-190" y="150" width="40" height="40" transform="rotate(45 -170 170)"/>
+      <rect x="150" y="-190" width="40" height="40" transform="rotate(45 170 -170)"/>
+      <rect x="-190" y="-190" width="40" height="40" transform="rotate(45 -170 -170)"/>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#20190f" stroke-opacity="0.25" stroke-width="1"/>
+</svg>

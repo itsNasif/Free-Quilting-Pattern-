@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Nine patch quilt block study in burgundy, cream and indigo">
+  <rect width="640" height="640" fill="#f7f0df"/>
+  <g>
+    <!-- 4x4 grid of nine-patches -->
+    <g>
+      <g transform="translate(40 40)">
+        <rect width="130" height="130" fill="#5c2331"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#5c2331"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#5c2331"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#5c2331"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#5c2331"/>
+      </g>
+      <g transform="translate(210 40)">
+        <rect width="130" height="130" fill="#263a56"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#263a56"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#263a56"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#263a56"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#263a56"/>
+      </g>
+      <g transform="translate(380 40)">
+        <rect width="130" height="130" fill="#5c2331"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#5c2331"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#5c2331"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#5c2331"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#5c2331"/>
+      </g>
+      <g transform="translate(470 40)">
+        <rect width="130" height="130" fill="#263a56"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#263a56"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#263a56"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#263a56"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#263a56"/>
+      </g>
+    </g>
+    <g>
+      <g transform="translate(40 210)">
+        <rect width="130" height="130" fill="#263a56"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#263a56"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#263a56"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#263a56"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#263a56"/>
+      </g>
+      <g transform="translate(210 210)">
+        <rect width="130" height="130" fill="#5c2331"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#5c2331"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#5c2331"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#5c2331"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#5c2331"/>
+      </g>
+      <g transform="translate(380 210)">
+        <rect width="130" height="130" fill="#263a56"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#263a56"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#263a56"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#263a56"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#263a56"/>
+      </g>
+      <g transform="translate(470 210)">
+        <rect width="130" height="130" fill="#5c2331"/>
+        <rect x="43.33" width="43.33" height="130" fill="#f7f0df"/>
+        <rect x="86.66" width="43.33" height="130" fill="#5c2331"/>
+        <rect y="43.33" width="130" height="43.33" fill="#f7f0df"/>
+        <rect x="43.33" y="43.33" width="43.33" height="43.33" fill="#5c2331"/>
+        <rect x="86.66" y="43.33" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect y="86.66" width="130" height="43.33" fill="#5c2331"/>
+        <rect x="43.33" y="86.66" width="43.33" height="43.33" fill="#f7f0df"/>
+        <rect x="86.66" y="86.66" width="43.33" height="43.33" fill="#5c2331"/>
+      </g>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#20190f" stroke-opacity="0.25" stroke-width="1"/>
+</svg>

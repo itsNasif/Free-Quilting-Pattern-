@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Flying geese quilt block study on midnight">
+  <rect width="640" height="640" fill="#1a2030"/>
+  <!-- diagonal rows of flying geese -->
+  <g>
+    <g>
+      <polygon points="60,300 140,180 220,300" fill="#f7f0df"/>
+      <polygon points="60,300 140,300 140,180" fill="#c3932b"/>
+      <polygon points="180,300 260,180 340,300" fill="#f7f0df"/>
+      <polygon points="180,300 260,300 260,180" fill="#c3932b"/>
+      <polygon points="300,300 380,180 460,300" fill="#f7f0df"/>
+      <polygon points="300,300 380,300 380,180" fill="#c3932b"/>
+      <polygon points="420,300 500,180 580,300" fill="#f7f0df"/>
+      <polygon points="420,300 500,300 500,180" fill="#c3932b"/>
+    </g>
+    <g>
+      <polygon points="60,420 140,300 220,420" fill="#263a56"/>
+      <polygon points="180,420 260,300 340,420" fill="#263a56"/>
+      <polygon points="300,420 380,300 460,420" fill="#263a56"/>
+      <polygon points="420,420 500,300 580,420" fill="#263a56"/>
+    </g>
+    <g>
+      <polygon points="60,540 140,420 220,540" fill="#2a4234"/>
+      <polygon points="180,540 260,420 340,540" fill="#2a4234"/>
+      <polygon points="300,540 380,420 460,540" fill="#2a4234"/>
+      <polygon points="420,540 500,420 580,540" fill="#2a4234"/>
+    </g>
+    <g>
+      <polygon points="-20,180 60,60 140,180" fill="#5c2331"/>
+      <polygon points="100,180 180,60 260,180" fill="#5c2331"/>
+      <polygon points="220,180 300,60 380,180" fill="#5c2331"/>
+      <polygon points="340,180 420,60 500,180" fill="#5c2331"/>
+      <polygon points="460,180 540,60 620,180" fill="#5c2331"/>
+      <polygon points="580,180 660,60 740,180" fill="#5c2331"/>
+    </g>
+  </g>
+  <!-- thread row -->
+  <line x1="20" y1="310" x2="620" y2="310" stroke="#c3932b" stroke-width="6"/>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#f7f0df" stroke-opacity="0.18" stroke-width="1"/>
+</svg>

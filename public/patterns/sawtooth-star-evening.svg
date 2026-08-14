@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Sawtooth star quilt block study on dark linen">
+  <rect width="640" height="640" fill="#141014"/>
+  <g transform="translate(320 320)">
+    <!-- big sawtooth star: center + 8 flying-geese points -->
+    <rect x="-48" y="-48" width="96" height="96" fill="#c3932b"/>
+    <g fill="#eee2ca" stroke="#141014" stroke-width="2">
+      <polygon points="-8,-48 -8,-120 -48,-120" />
+      <polygon points="8,-48 8,-120 48,-120" />
+      <polygon points="8,48 8,120 48,120" />
+      <polygon points="-8,48 -8,120 -48,120" />
+      <polygon points="-48,-8 -120,-8 -120,-48" />
+      <polygon points="48,-8 120,-8 120,-48" />
+      <polygon points="-48,8 -120,8 -120,48" />
+      <polygon points="48,8 120,8 120,48" />
+    </g>
+    <g fill="#c3932b" stroke="#141014" stroke-width="2">
+      <polygon points="-8,-48 8,-48 8,-120 -8,-120" />
+      <polygon points="8,48 -8,48 -8,120 8,120" />
+      <polygon points="-48,-8 -48,8 -120,8 -120,-8" />
+      <polygon points="48,-8 48,8 120,8 120,-8" />
+    </g>
+    <!-- small corner stars -->
+    <g transform="translate(-190 -190) scale(0.72)">
+      <rect x="-24" y="-24" width="48" height="48" fill="#2a4234"/>
+      <g fill="#eee2ca">
+        <polygon points="-4,-24 -4,-60 -24,-60" />
+        <polygon points="4,-24 4,-60 24,-60" />
+        <polygon points="4,24 4,60 24,60" />
+        <polygon points="-4,24 -4,60 -24,60" />
+        <polygon points="-24,-4 -60,-4 -60,-24" />
+        <polygon points="24,-4 60,-4 60,-24" />
+        <polygon points="-24,4 -60,4 -60,24" />
+        <polygon points="24,4 60,4 60,24" />
+      </g>
+      <g fill="#c3932b">
+        <polygon points="-4,-24 4,-24 4,-60 -4,-60" />
+        <polygon points="4,24 -4,24 -4,60 4,60" />
+        <polygon points="-24,-4 -24,4 -60,4 -60,-4" />
+        <polygon points="24,-4 24,4 60,4 60,-4" />
+      </g>
+    </g>
+    <g transform="translate(190 -190) scale(0.72)">
+      <rect x="-24" y="-24" width="48" height="48" fill="#263a56"/>
+      <g fill="#eee2ca">
+        <polygon points="-4,-24 -4,-60 -24,-60" />
+        <polygon points="4,-24 4,-60 24,-60" />
+        <polygon points="4,24 4,60 24,60" />
+        <polygon points="-4,24 -4,60 -24,60" />
+        <polygon points="-24,-4 -60,-4 -60,-24" />
+        <polygon points="24,-4 60,-4 60,-24" />
+        <polygon points="-24,4 -60,4 -60,24" />
+        <polygon points="24,4 60,4 60,24" />
+      </g>
+      <g fill="#c3932b">
+        <polygon points="-4,-24 4,-24 4,-60 -4,-60" />
+        <polygon points="4,24 -4,24 -4,60 4,60" />
+        <polygon points="-24,-4 -24,4 -60,4 -60,-4" />
+        <polygon points="24,-4 24,4 60,4 60,-4" />
+      </g>
+    </g>
+    <g transform="translate(-190 190) scale(0.72)">
+      <rect x="-24" y="-24" width="48" height="48" fill="#263a56"/>
+      <g fill="#eee2ca">
+        <polygon points="-4,-24 -4,-60 -24,-60" />
+        <polygon points="4,-24 4,-60 24,-60" />
+        <polygon points="4,24 4,60 24,60" />
+        <polygon points="-4,24 -4,60 -24,60" />
+        <polygon points="-24,-4 -60,-4 -60,-24" />
+        <polygon points="24,-4 60,-4 60,-24" />
+        <polygon points="-24,4 -60,4 -60,24" />
+        <polygon points="24,4 60,4 60,24" />
+      </g>
+      <g fill="#c3932b">
+        <polygon points="-4,-24 4,-24 4,-60 -4,-60" />
+        <polygon points="4,24 -4,24 -4,60 4,60" />
+        <polygon points="-24,-4 -24,4 -60,4 -60,-4" />
+        <polygon points="24,-4 24,4 60,4 60,-4" />
+      </g>
+    </g>
+    <g transform="translate(190 190) scale(0.72)">
+      <rect x="-24" y="-24" width="48" height="48" fill="#2a4234"/>
+      <g fill="#eee2ca">
+        <polygon points="-4,-24 -4,-60 -24,-60" />
+        <polygon points="4,-24 4,-60 24,-60" />
+        <polygon points="4,24 4,60 24,60" />
+        <polygon points="-4,24 -4,60 -24,60" />
+        <polygon points="-24,-4 -60,-4 -60,-24" />
+        <polygon points="24,-4 60,-4 60,-24" />
+        <polygon points="-24,4 -60,4 -60,24" />
+        <polygon points="24,4 60,4 60,24" />
+      </g>
+      <g fill="#c3932b">
+        <polygon points="-4,-24 4,-24 4,-60 -4,-60" />
+        <polygon points="4,24 -4,24 -4,60 4,60" />
+        <polygon points="-24,-4 -24,4 -60,4 -60,-4" />
+        <polygon points="24,-4 24,4 60,4 60,-4" />
+      </g>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#f7f0df" stroke-opacity="0.18" stroke-width="1"/>
+</svg>

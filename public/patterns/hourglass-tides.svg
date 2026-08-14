@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Hourglass quilt block study in four tones like tide lines">
+  <rect width="640" height="640" fill="#f7f0df"/>
+  <g>
+    <!-- hourglass blocks in a staggered wave -->
+    <g transform="translate(0 0)">
+      <g>
+        <path d="M0 0 L80 80 L160 0 Z" fill="#1a2030"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#263a56"/>
+      </g>
+      <g transform="translate(160 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#263a56"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#2a4234"/>
+      </g>
+      <g transform="translate(320 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#2a4234"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#141014"/>
+      </g>
+      <g transform="translate(480 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#141014"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#263a56"/>
+      </g>
+    </g>
+    <g transform="translate(0 160)">
+      <g>
+        <path d="M0 0 L80 80 L160 0 Z" fill="#5c2331"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#1a2030"/>
+      </g>
+      <g transform="translate(160 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#eee2ca"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#5c2331"/>
+      </g>
+      <g transform="translate(320 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#1a2030"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#eee2ca"/>
+      </g>
+      <g transform="translate(480 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#5c2331"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#141014"/>
+      </g>
+    </g>
+    <g transform="translate(0 320)">
+      <g>
+        <path d="M0 0 L80 80 L160 0 Z" fill="#263a56"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#eee2ca"/>
+      </g>
+      <g transform="translate(160 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#eee2ca"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#2a4234"/>
+      </g>
+      <g transform="translate(320 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#141014"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#eee2ca"/>
+      </g>
+      <g transform="translate(480 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#263a56"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#5c2331"/>
+      </g>
+    </g>
+    <g transform="translate(0 480)">
+      <g>
+        <path d="M0 0 L80 80 L160 0 Z" fill="#141014"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#2a4234"/>
+      </g>
+      <g transform="translate(160 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#1a2030"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#263a56"/>
+      </g>
+      <g transform="translate(320 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#2a4234"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#1a2030"/>
+      </g>
+      <g transform="translate(480 0)">
+        <path d="M0 0 L80 80 L160 0 Z" fill="#263a56"/>
+        <path d="M0 160 L80 80 L160 160 Z" fill="#141014"/>
+      </g>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#20190f" stroke-opacity="0.25" stroke-width="1"/>
+</svg>

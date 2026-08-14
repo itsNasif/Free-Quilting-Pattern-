@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Drunkard's path quilt block study in linen and indigo">
+  <rect width="640" height="640" fill="#eee2ca"/>
+  <g>
+    <!-- 4x4 grid of drunkard's path blocks, alternating orientation -->
+    <g transform="translate(40 40)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 1 130 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 1 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(210 40)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 0 0 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 0 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(380 40)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 1 130 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 1 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(470 40)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 0 0 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 0 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(40 210)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 0 0 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 0 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(210 210)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 1 130 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 1 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(380 210)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 0 0 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 0 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(470 210)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 1 130 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 1 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(40 380)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 1 130 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 1 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(210 380)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 0 0 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 0 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(380 380)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 1 130 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 1 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+    <g transform="translate(470 380)">
+      <rect width="130" height="130" fill="#263a56"/>
+      <path d="M65 65 A65 65 0 0 0 0 65 L65 65 Z" fill="#eee2ca"/>
+      <path d="M65 65 A65 65 0 0 0 65 130 L65 65 Z" fill="#e0d0b0"/>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#20190f" stroke-opacity="0.25" stroke-width="1"/>
+</svg>

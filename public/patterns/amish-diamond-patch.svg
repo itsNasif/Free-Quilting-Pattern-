@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Amish medallion diamond quilt block study">
+  <rect width="640" height="640" fill="#141014"/>
+  <g transform="translate(320 320)">
+    <!-- outer linen border -->
+    <rect x="-270" y="-270" width="540" height="540" fill="#1a2030"/>
+    <rect x="-250" y="-250" width="500" height="500" fill="#5c2331"/>
+    <rect x="-230" y="-230" width="460" height="460" fill="#eee2ca"/>
+    <!-- thin gold thread border -->
+    <rect x="-210" y="-210" width="420" height="420" fill="none" stroke="#c3932b" stroke-width="8"/>
+    <!-- center diamond medallion -->
+    <g transform="rotate(45)">
+      <rect x="-170" y="-170" width="340" height="340" fill="#1a2030"/>
+      <rect x="-130" y="-130" width="260" height="260" fill="#263a56"/>
+      <rect x="-90" y="-90" width="180" height="180" fill="#2a4234"/>
+      <rect x="-50" y="-50" width="100" height="100" fill="#c3932b"/>
+      <rect x="-22" y="-22" width="44" height="44" fill="#eee2ca"/>
+    </g>
+    <!-- corner diamonds -->
+    <g fill="#5c2331">
+      <rect x="165" y="165" width="60" height="60" transform="rotate(45 195 195)"/>
+      <rect x="-225" y="165" width="60" height="60" transform="rotate(45 -195 195)"/>
+      <rect x="165" y="-225" width="60" height="60" transform="rotate(45 195 -195)"/>
+      <rect x="-225" y="-225" width="60" height="60" transform="rotate(45 -195 -195)"/>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="639" height="639" fill="none" stroke="#f7f0df" stroke-opacity="0.18" stroke-width="1"/>
+</svg>
