@@ -1,81 +1,171 @@
 "use client";
 
-// A single, labeled, fixed-size advertising slot. Ads are "furniture,
-// never walls": every unit renders inside a seam frame with an explicit
-// "Ad" tag, loads lazily, and never exceeds its box.
-//
-// When the Adstera loader URL and a zone id are configured the Adstera
-// script is injected once and the unit mounts into this frame. Without
-// them the frame shows a quiet placeholder so the page layout is fully
-// visible before real ad tags are added.
-//
-// To wire your real Adstera account: set NEXT_PUBLIC_ADSTERA_SCRIPT_URL
-// and the matching NEXT_PUBLIC_ADSTERA_*_ID, then adjust `mountUnit`
-// below to the exact markup your Adstera loader expects.
+/**
+ * AdSlot — Adsterra Advertising Unit for QuiltHaven.
+ * Renders verified Adsterra ad formats (728x90 Leaderboard, Native Banner, Smartlink)
+ * within a labeled, responsive seam frame.
+ */
 
-import { useEffect, useId, useRef } from "react";
+import { useId } from "react";
 
-const SIZES = {
-  leaderboard: { w: 728, h: 90 },
-  infeed: { w: null, h: 250 },
-  download: { w: 320, h: 250 },
-  sidebar: { w: 300, h: 250 },
-};
+const BANNER_728X90_KEY =
+  process.env.NEXT_PUBLIC_ADSTERRA_BANNER_728X90_ID ||
+  "d271bc5ea80da947787f13dde8a02f77";
 
-const ZONE_ENV = {
-  leaderboard: "NEXT_PUBLIC_ADSTERA_LEADERBOARD_ID",
-  infeed: "NEXT_PUBLIC_ADSTERA_INFEED_ID",
-  download: "NEXT_PUBLIC_ADSTERA_DOWNLOAD_ID",
-};
+const NATIVE_BANNER_KEY =
+  process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_BANNER_ID ||
+  "c6d3de3e1b3bcdb420e24ca97ecfcb30";
 
-const scriptUrl = process.env.NEXT_PUBLIC_ADSTERA_SCRIPT_URL || "";
+const SMARTLINK_URL =
+  process.env.NEXT_PUBLIC_ADSTERRA_SMARTLINK_URL ||
+  `https://spongeascend.com/zmrzjg6yv7?key=${
+    process.env.NEXT_PUBLIC_ADSTERRA_SMARTLINK_ID || "ad3ba3d1a22637f2aceb6a1848b3a7bc"
+  }`;
 
-function hasRealAd(variant) {
-  if (!scriptUrl) return false;
-  const zone = process.env[ZONE_ENV[variant]];
-  return Boolean(zone);
-}
+export default function AdSlot({
+  variant = "infeed",
+  dark = false,
+  className = "",
+}) {
+  const isLeaderboard = variant === "leaderboard" || variant === "banner728x90";
+  const isSmartlink = variant === "smartlink";
+  const isNative = variant === "infeed" || variant === "nativeBanner" || variant === "download";
 
-/** Inject the Adstera loader exactly once. */
-function ensureLoader() {
-  if (!scriptUrl) return;
-  const id = "adstera-loader";
-  if (document.getElementById(id)) return;
-  const s = document.createElement("script");
-  s.id = id;
-  s.src = scriptUrl;
-  s.async = true;
-  document.head.appendChild(s);
-}
-
-export default function AdSlot({ variant = "infeed", dark = false, className = "" }) {
-  const boxRef = useRef(null);
-  const uid = useId().replace(/:/g, "");
-  const size = SIZES[variant];
-  const realAd = hasRealAd(variant);
-
-  useEffect(() => {
-    if (!realAd || !boxRef.current) return;
-    ensureLoader();
-    // Mount the Adstera unit into the frame. Adjust to your loader's markup.
-    const zone = process.env[ZONE_ENV[variant]];
-    const holder = document.createElement("div");
-    holder.setAttribute("data-adstera-zone", zone);
-    holder.setAttribute("class", "adstera-unit");
-    holder.style.width = "100%";
-    holder.style.minHeight = `${size.h}px`;
-    boxRef.current.appendChild(holder);
-    return () => {
-      if (holder.parentNode) holder.parentNode.removeChild(holder);
-    };
-  }, [realAd, variant, size.h]);
+  if (isSmartlink) {
+    return (
+      <a
+        href={SMARTLINK_URL}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        className={`measure-label inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-thread/30 bg-linen-light hover:bg-linen-deep/50 transition-colors ${
+          dark
+            ? "text-thread-light border-thread/50 bg-char"
+            : "text-ink-soft"
+        } ${className}`}
+        aria-label="Sponsored Link"
+      >
+        <svg
+          aria-hidden="true"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
+        Sponsored Partner
+      </a>
+    );
+  }
 
   const frame = dark ? "ad-frame ad-frame-dark" : "ad-frame";
 
+  if (isLeaderboard) {
+    const bannerDoc = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <base target="_blank">
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '${BANNER_728X90_KEY}',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="https://spongeascend.com/${BANNER_728X90_KEY}/invoke.js"></script>
+  </body>
+</html>`;
+
+    return (
+      <aside
+        className={`${frame} ${className} overflow-hidden w-full flex flex-col items-center justify-center`}
+        style={{ maxWidth: "728px", minHeight: "90px" }}
+        aria-label="Advertisement"
+      >
+        <span
+          className={`measure-label pointer-events-none absolute right-2 top-1.5 z-10 text-[0.58rem] ${
+            dark ? "text-cream-dim/80" : "text-ink-soft/80"
+          }`}
+        >
+          Ad
+        </span>
+        <div className="w-full flex items-center justify-center overflow-x-auto">
+          <iframe
+            title="Adsterra 728x90 Banner"
+            srcDoc={bannerDoc}
+            width="728"
+            height="90"
+            style={{ border: "none", width: "728px", height: "90px", overflow: "hidden" }}
+            loading="lazy"
+          />
+        </div>
+      </aside>
+    );
+  }
+
+  // Native banner (infeed, download, or general banner)
+  const nativeDoc = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <base target="_blank">
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      #container-${NATIVE_BANNER_KEY} {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script async="async" data-cfasync="false" src="https://spongeascend.com/${NATIVE_BANNER_KEY}/invoke.js"></script>
+    <div id="container-${NATIVE_BANNER_KEY}"></div>
+  </body>
+</html>`;
+
+  const minHeight = variant === "download" ? 200 : 250;
+
   return (
     <aside
-      className={`${frame} ${className}`}
-      style={size.w ? { width: "100%", maxWidth: size.w, minHeight: size.h } : { minHeight: size.h }}
+      className={`${frame} ${className} overflow-hidden w-full`}
+      style={{ minHeight: `${minHeight}px` }}
       aria-label="Advertisement"
     >
       <span
@@ -85,16 +175,15 @@ export default function AdSlot({ variant = "infeed", dark = false, className = "
       >
         Ad
       </span>
-      <div ref={boxRef} className="flex h-full w-full items-center justify-center">
-        {!realAd && (
-          <p
-            className={`measure-label max-w-[26ch] text-center leading-relaxed ${
-              dark ? "text-cream-dim/70" : "text-ink-soft/70"
-            }`}
-          >
-            Advertisement · your Adstera unit renders here
-          </p>
-        )}
+      <div className="flex h-full w-full items-center justify-center">
+        <iframe
+          title="Adsterra Native Banner"
+          srcDoc={nativeDoc}
+          width="100%"
+          height={minHeight}
+          style={{ border: "none", width: "100%", minHeight: `${minHeight}px`, overflow: "hidden" }}
+          loading="lazy"
+        />
       </div>
     </aside>
   );

@@ -2,6 +2,7 @@ import { Fraunces, Instrument_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import AdsterraGlobal from "@/components/AdsterraGlobal";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
       className={`${fraunces.variable} ${instrument.variable} ${spaceMono.variable}`}
     >
       <body suppressHydrationWarning>
+        <AdsterraGlobal />
         {/*
           THESIS: QuiltHaven is a free quilting-pattern library built like a
           hand-sewn Amish medallion quilt — bold solid color fields, strict
