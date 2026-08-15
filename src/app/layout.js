@@ -21,23 +21,121 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://quilthaven.vercel.app";
+
 export const metadata = {
+  // ── Titles ────────────────────────────────────────────────────────
   title: {
-    default: "QuiltHaven — Free Quilting Patterns",
+    default: "QuiltHaven — Free Quilting Patterns to Download",
     template: "%s · QuiltHaven",
   },
+
+  // ── Description ───────────────────────────────────────────────────
   description:
-    "Free, printable quilting patterns from a hand-sewn library. Preview the finished quilt, read the cutting numbers, and take the pattern home.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+    "Browse QuiltHaven's free, printable quilting pattern library. Download beginner to advanced quilt patterns — lap quilts, baby quilts, bed quilts, and wall hangings — no sign-up required.",
+
+  // ── Canonical & base ──────────────────────────────────────────────
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
+
+  // ── Keywords ──────────────────────────────────────────────────────
+  keywords: [
+    "free quilting patterns",
+    "free quilt patterns download",
+    "printable quilt patterns",
+    "quilting patterns PDF",
+    "beginner quilt patterns",
+    "easy quilt patterns",
+    "lap quilt patterns",
+    "baby quilt patterns",
+    "bed quilt patterns",
+    "wall hanging quilt patterns",
+    "modern quilt patterns",
+    "traditional quilt patterns",
+    "Amish quilt patterns",
+    "patchwork quilt patterns",
+    "free sewing patterns quilts",
+    "quilt block patterns",
+    "quilting for beginners",
+    "free quilting downloads",
+    "QuiltHaven",
+    "quilthaven.vercel.app",
+  ],
+
+  // ── Robots ────────────────────────────────────────────────────────
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  // ── Google Search Console verification ───────────────────────────
+  verification: {
+    google: "_UpXCtDL5XeS1ehPHiJbbOMwKzjYCgsDGQvRrGBh7aU",
+  },
+
+  // ── Open Graph ────────────────────────────────────────────────────
   openGraph: {
     type: "website",
     siteName: "QuiltHaven",
+    url: SITE_URL,
+    title: "QuiltHaven — Free Quilting Patterns to Download",
+    description:
+      "Browse QuiltHaven's free, printable quilting pattern library. Download beginner to advanced quilt patterns — no sign-up required.",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "QuiltHaven — Free Quilting Patterns",
+      },
+    ],
+    locale: "en_US",
   },
+
+  // ── Twitter / X Card ──────────────────────────────────────────────
+  twitter: {
+    card: "summary_large_image",
+    title: "QuiltHaven — Free Quilting Patterns to Download",
+    description:
+      "Browse QuiltHaven's free, printable quilting pattern library. Download beginner to advanced quilt patterns — no sign-up required.",
+    images: [`${SITE_URL}/og-image.png`],
+    site: "@quilthaven",
+  },
+
+  // ── Author / Category ─────────────────────────────────────────────
+  authors: [{ name: "QuiltHaven", url: SITE_URL }],
+  category: "Crafts & Hobbies",
+  creator: "QuiltHaven",
+  publisher: "QuiltHaven",
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "QuiltHaven",
+    url: SITE_URL,
+    description:
+      "Free, printable quilting patterns. Preview the finished quilt, read the cutting numbers, and take the pattern home — no sign-up required.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/patterns?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <html
       lang="en"
@@ -45,6 +143,11 @@ export default function RootLayout({ children }) {
       className={`${fraunces.variable} ${instrument.variable} ${spaceMono.variable}`}
     >
       <body suppressHydrationWarning>
+        {/* JSON-LD structured data for Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <AdsterraGlobal />
         {/*
           THESIS: QuiltHaven is a free quilting-pattern library built like a

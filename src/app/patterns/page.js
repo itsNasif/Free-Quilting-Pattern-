@@ -5,9 +5,37 @@ import AdSlot from "@/components/AdSlot";
 import { CATEGORIES, DIFFICULTIES, getPatterns } from "@/lib/patterns";
 
 export const metadata = {
-  title: "Browse Patterns",
+  title: "Browse Free Quilt Patterns",
   description:
-    "Browse the free QuiltHaven pattern library — filter by size, skill, or search by name and idea.",
+    "Search and filter QuiltHaven's free quilting pattern library by category, skill level, size, and fabric. Download beginner, intermediate and advanced quilt patterns in PDF — free, no email required.",
+  alternates: { canonical: "https://quilthaven.vercel.app/patterns" },
+  keywords: [
+    "browse quilt patterns",
+    "free quilt patterns by category",
+    "beginner quilt patterns PDF",
+    "intermediate quilting patterns",
+    "advanced quilt patterns download",
+    "lap quilt free PDF",
+    "baby quilt free pattern",
+    "modern quilting patterns",
+    "traditional quilt patterns free",
+    "Amish quilt patterns download",
+    "wall hanging patterns free",
+    "table topper quilt patterns",
+  ],
+  openGraph: {
+    title: "Browse Free Quilt Patterns — QuiltHaven",
+    description:
+      "Search and filter hundreds of free quilt patterns by skill level, size, and category. Download PDFs free, no sign-up.",
+    url: "https://quilthaven.vercel.app/patterns",
+    images: [{ url: "https://quilthaven.vercel.app/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Browse Free Quilt Patterns — QuiltHaven",
+    description: "Filter by skill, size, and category. Download free quilt pattern PDFs instantly.",
+    images: ["https://quilthaven.vercel.app/og-image.png"],
+  },
 };
 
 const PAGE_SIZE = 12;

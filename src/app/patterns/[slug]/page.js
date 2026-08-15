@@ -11,16 +11,47 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const pattern = await getPatternBySlug(slug);
   if (!pattern) return { title: "Pattern not found" };
+
+  const canonicalUrl = `https://quilthaven.vercel.app/patterns/${slug}`;
+  const title = `${pattern.title} — Free Quilt Pattern PDF`;
+  const description = pattern.description
+    ? `${pattern.description} Download this free quilting pattern PDF from QuiltHaven — no sign-up required.`
+    : `Download the free ${pattern.title} quilting pattern PDF. ${pattern.difficulty ?? ""} ${pattern.category ?? ""} quilt pattern from QuiltHaven.`;
+
   return {
-    title: pattern.title,
-    description: pattern.description,
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    keywords: [
+      pattern.title,
+      `${pattern.title} free PDF`,
+      `${pattern.title} quilt pattern`,
+      pattern.category ? `${pattern.category.toLowerCase()} quilt pattern` : null,
+      pattern.difficulty ? `${pattern.difficulty.toLowerCase()} quilt pattern` : null,
+      "free quilting pattern download",
+      "free quilt PDF",
+      "QuiltHaven",
+    ].filter(Boolean),
     openGraph: {
       title: `${pattern.title} — QuiltHaven`,
-      description: pattern.description,
-      images: pattern.image_url ? [{ url: pattern.image_url }] : [],
+      description,
+      url: canonicalUrl,
+      type: "article",
+      images: pattern.image_url
+        ? [{ url: pattern.image_url, width: 800, height: 800, alt: pattern.title }]
+        : [{ url: "https://quilthaven.vercel.app/og-image.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${pattern.title} — Free Quilt Pattern`,
+      description: `Free PDF download: ${pattern.title}. No sign-up required.`,
+      images: pattern.image_url
+        ? [pattern.image_url]
+        : ["https://quilthaven.vercel.app/og-image.png"],
     },
   };
 }
+
 
 export default async function PatternPage({ params }) {
   const { slug } = await params;

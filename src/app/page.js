@@ -8,7 +8,31 @@ import { formatCount } from "@/lib/format";
 export const metadata = {
   title: "Free Quilting Patterns to Download",
   description:
-    "Browse a free, printable quilting pattern library. Preview the finished quilt, read the cutting numbers, and take the pattern home after one honest ad moment.",
+    "QuiltHaven offers free, printable quilting patterns for all skill levels. Browse lap quilts, baby quilts, bed quilts, wall hangings and more — download your PDF pattern with no sign-up required.",
+  alternates: { canonical: "https://quilthaven.vercel.app/" },
+  keywords: [
+    "free quilting patterns",
+    "free quilt patterns PDF",
+    "printable quilting patterns download",
+    "beginner quilt patterns",
+    "lap quilt patterns free",
+    "baby quilt patterns free",
+    "wall hanging quilt patterns",
+    "QuiltHaven",
+  ],
+  openGraph: {
+    title: "QuiltHaven — Free Quilting Patterns to Download",
+    description:
+      "Free, printable quilting patterns for all skill levels. Download your PDF — no sign-up, no paywall.",
+    url: "https://quilthaven.vercel.app/",
+    images: [{ url: "https://quilthaven.vercel.app/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QuiltHaven — Free Quilting Patterns",
+    description: "Free printable quilting patterns — download with no sign-up.",
+    images: ["https://quilthaven.vercel.app/og-image.png"],
+  },
 };
 
 export default async function HomePage() {
