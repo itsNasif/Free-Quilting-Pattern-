@@ -55,11 +55,18 @@ export default async function PatternsPage({ searchParams }) {
         </div>
       </section>
 
+      {/* ── Ad: Leaderboard between search header and pattern grid ─── */}
+      <div className="border-b border-dashed border-ink/15 bg-linen-light">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-2 px-5 py-6 sm:px-8">
+          <AdSlot variant="leaderboard" />
+        </div>
+      </div>
+
       <section className="bg-linen">
         <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
           <p className="measure-label text-ink-soft" role="status">
             {total} pattern{total === 1 ? "" : "s"}
-            {q ? ` for “${q}”` : ""}
+            {q ? ` for "${q}"` : ""}
             {category ? ` · ${category}` : ""}
             {difficulty ? ` · ${difficulty}` : ""}
           </p>
@@ -87,10 +94,11 @@ export default async function PatternsPage({ searchParams }) {
         </div>
       </section>
 
-      {/* A single, quiet in-feed slot after the grid */}
+      {/* ── Ad: Native infeed after grid + leaderboard at the bottom ── */}
       <div className="border-t-2 border-dashed border-ink/15 bg-linen">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-2 px-5 py-8 sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-5 py-8 sm:px-8">
           <AdSlot variant="infeed" />
+          <AdSlot variant="leaderboard" />
         </div>
       </div>
     </>

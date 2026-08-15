@@ -108,15 +108,20 @@ export default async function PatternPage({ params }) {
                   One short ad view unlocks the PDF — no sign-up.
                 </p>
               </div>
+
+              {/* ── Ad: Native banner inside the detail panel ─────────── */}
+              <div className="mt-8 border-t border-dashed border-ink/15 pt-6">
+                <AdSlot variant="infeed" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quiet in-feed slot after the details */}
+      {/* ── Ad: Leaderboard between details and related patterns ──── */}
       <div className="border-y-2 border-dashed border-ink/15 bg-linen">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-2 px-5 py-8 sm:px-8">
-          <AdSlot variant="infeed" />
+          <AdSlot variant="leaderboard" />
         </div>
       </div>
 
@@ -139,6 +144,11 @@ export default async function PatternPage({ params }) {
               {related.map((p) => (
                 <PatternCard key={p.slug} pattern={p} />
               ))}
+            </div>
+
+            {/* ── Ad: Native infeed after related patterns ─────────── */}
+            <div className="mt-12 border-t border-dashed border-ink/15 pt-8">
+              <AdSlot variant="infeed" />
             </div>
           </div>
         </section>

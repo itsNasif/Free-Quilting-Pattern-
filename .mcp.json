@@ -3,6 +3,15 @@
     "supabase": {
       "type": "http",
       "url": "https://mcp.supabase.com/mcp?project_ref=jqxvcycllmlueryitmps&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching%2Cstorage"
+    },
+    "cloudinary": {
+      "command": "npx",
+      "args": ["cloudinary-mcp-server"],
+      "env": {
+        "CLOUDINARY_CLOUD_NAME": "dhb3zk9tq",
+        "CLOUDINARY_API_KEY": "327125195615864",
+        "CLOUDINARY_API_SECRET": "zV_77Fqrhiy7wQOugixa1osMJDg"
+      }
     }
   }
 }

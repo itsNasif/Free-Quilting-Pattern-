@@ -28,11 +28,14 @@ export default function SiteFooter() {
           <Link href="/patterns" className="text-cream-dim transition-colors hover:text-thread-light">
             All patterns
           </Link>
+          <Link href="/profile" className="text-cream-dim transition-colors hover:text-thread-light">
+            Quilter Profile
+          </Link>
           <Link href="/#how" className="text-cream-dim transition-colors hover:text-thread-light">
             How downloading works
           </Link>
           <Link href="/admin" className="text-cream-dim transition-colors hover:text-thread-light">
-            Pattern workshop
+            Admin workshop
           </Link>
         </nav>
 

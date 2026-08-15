@@ -113,7 +113,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── Quiet, labeled ad slot tucked at the fold seam ───────────── */}
+      {/* ── Ad: Leaderboard banner at the fold seam ───────────────────── */}
       <div className="border-t-2 border-dashed border-ink/15 bg-linen-light">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-2 px-5 py-8 sm:px-8">
           <p className="measure-label text-ink-soft/80">
@@ -142,6 +142,11 @@ export default async function HomePage() {
             {popular.map((p) => (
               <PatternCard key={p.slug} pattern={p} />
             ))}
+          </div>
+
+          {/* ── Ad: Native in-feed inside the pattern library section ── */}
+          <div className="mt-12 border-t border-dashed border-ink/15 pt-8">
+            <AdSlot variant="infeed" />
           </div>
         </div>
       </section>
@@ -185,6 +190,11 @@ export default async function HomePage() {
               </li>
             ))}
           </ol>
+
+          {/* ── Ad: Leaderboard banner under How It Works steps ──────── */}
+          <div className="mt-12 flex justify-center border-t border-dashed border-ink/15 pt-8">
+            <AdSlot variant="leaderboard" />
+          </div>
         </div>
       </section>
 

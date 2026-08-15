@@ -14,6 +14,7 @@ import {
   isSupabaseAdminConfigured,
   isSupabaseConfigured,
   PATTERN_FILES_BUCKET,
+  PATTERN_IMAGES_BUCKET,
 } from "./supabase";
 
 const TABLE = "patterns";
@@ -58,9 +59,14 @@ export const CATEGORIES = [
   "Bed Quilt",
   "Wall Hanging",
   "Table Topper",
+  "Modern Quilt",
+  "Traditional",
+  "Holiday & Seasonal",
+  "Mini Quilt",
+  "Bags & Accessories",
 ];
 
-export const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced"];
+export const DIFFICULTIES = ["Beginner", "Easy", "Intermediate", "Advanced"];
 
 /**
  * List patterns with optional filters.
@@ -183,10 +189,13 @@ export async function getPopularPatterns(limit = 4) {
  * URL from the pattern-files bucket so the file is never exposed.
  */
 export async function getDownloadUrl(pattern) {
+  if (!pattern?.file_url) return null;
   if (!isSupabaseConfigured()) {
     return pattern.file_url;
   }
-  if (!pattern.file_url) return null;
+  if (pattern.file_url.startsWith("http://") || pattern.file_url.startsWith("https://") || pattern.file_url.startsWith("/")) {
+    return pattern.file_url;
+  }
   try {
     const client = getSupabaseAdmin();
     const { data, error } = await client.storage
@@ -305,7 +314,8 @@ export async function deletePatternRow(id) {
 export async function uploadPatternFile(file, slug) {
   if (!isSupabaseAdminConfigured()) return null;
   const client = getSupabaseAdmin();
-  const path = `patterns/${slug}.pdf`;
+  const safeSlug = slug || "pattern";
+  const path = `patterns/${safeSlug}-${Date.now()}.pdf`;
   const { error } = await client.storage
     .from(PATTERN_FILES_BUCKET)
     .upload(path, file, { upsert: true, contentType: "application/pdf" });
@@ -314,4 +324,35 @@ export async function uploadPatternFile(file, slug) {
     return null;
   }
   return path;
+}
+
+/** Upload an image (PNG, JPG, WEBP, SVG) to the pattern-images bucket. Returns public URL. */
+export async function uploadPatternImage(file, slug) {
+  if (!isSupabaseAdminConfigured()) return null;
+  const client = getSupabaseAdmin();
+  const safeSlug = slug || "pattern";
+  const originalName = file.name || "image.jpg";
+  const ext = originalName.split(".").pop()?.toLowerCase() || "jpg";
+  const path = `thumbnails/${safeSlug}-${Date.now()}.${ext}`;
+  const contentType =
+    file.type ||
+    (ext === "svg"
+      ? "image/svg+xml"
+      : ext === "png"
+      ? "image/png"
+      : ext === "webp"
+      ? "image/webp"
+      : "image/jpeg");
+
+  const { error } = await client.storage
+    .from(PATTERN_IMAGES_BUCKET)
+    .upload(path, file, { upsert: true, contentType });
+
+  if (error) {
+    console.error("uploadPatternImage error:", error.message);
+    return null;
+  }
+
+  const { data } = client.storage.from(PATTERN_IMAGES_BUCKET).getPublicUrl(path);
+  return data?.publicUrl || null;
 }

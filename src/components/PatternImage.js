@@ -1,28 +1,39 @@
-import Image from "next/image";
+// ─────────────────────────────────────────────────────────────────────
+// QuiltHaven · PatternImage
+//
+// Renders a pattern thumbnail inside a sized (position:relative) parent.
+//
+// Routing logic:
+//  • No src            → linen placeholder
+//  • Local .svg        → plain <img> (no optimizer; avoids dangerouslyAllowSVG)
+//  • External URL      → plain <img> with loading="lazy" so it always renders
+//                        without going through the Next.js image proxy pipeline.
+//                        (Supabase Storage & Cloudinary already serve optimised
+//                        WebP/AVIF — running them through /_next/image again adds
+//                        latency without benefit and can silently fail when the
+//                        optimizer quota or cache isn't warm.)
+// ─────────────────────────────────────────────────────────────────────
 
-// Renders a pattern preview inside a sized (position: relative) parent.
-// Demo previews are square SVGs and render as plain <img>; real Cloudinary
-// photos go through next/image for optimization. SVGs bypass the optimizer
-// to avoid needing dangerouslyAllowSVG.
-
-export default function PatternImage({ src, alt, sizes = "50vw", priority = false }) {
+export default function PatternImage({
+  src,
+  alt = "",
+  sizes,          // accepted but unused – kept for drop-in compatibility
+  priority = false,
+}) {
   if (!src) {
     return <div className="h-full w-full bg-linen-deep" aria-hidden="true" />;
   }
-  if (typeof src === "string" && src.endsWith(".svg")) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={src}
-        alt={alt}
-        width={640}
-        height={640}
-        loading={priority ? "eager" : "lazy"}
-        className="h-full w-full object-cover"
-      />
-    );
-  }
+
+  // All image URLs (local SVGs, Supabase Storage, Cloudinary) are rendered
+  // via a standard <img> tag so the browser fetches them directly.
   return (
-    <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      className="h-full w-full object-cover"
+    />
   );
 }
